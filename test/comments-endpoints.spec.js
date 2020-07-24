@@ -52,7 +52,7 @@ describe('Comments Endpoints', function() {
           expect(res.body.article_id).to.eql(newComment.article_id)
           expect(res.body.user.id).to.eql(testUser.id)
           expect(res.headers.location).to.eql(`/api/comments/${res.body.id}`)
-          const expectedDate = new Date().toLocaleString('en', { timeZone: 'UTC' })
+          const expectedDate = new Date().toLocaleString()
           const actualDate = new Date(res.body.date_created).toLocaleString()
           expect(actualDate).to.eql(expectedDate)
         })
